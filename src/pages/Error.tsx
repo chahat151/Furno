@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 
-function Thankyou() {
+function Error() {
   return (
-    <body>
+    <>
       {/* <!-- Start Hero Section --> */}
-      <div className="hero">
+      {/* <div className="hero">
         <div className="container">
           <div className="row justify-content-between">
             <div className="col-lg-5">
@@ -15,15 +15,19 @@ function Thankyou() {
             <div className="col-lg-7"></div>
           </div>
         </div>
-      </div>
+      </div> */}
       {/* <!-- End Hero Section --> */}
 
       <div className="untree_co-section">
         <div className="container">
           <div className="row">
             <div className="col-md-12 text-center pt-5">
-              <span className="display-3 thankyou-icon text-primary">
-                <svg
+              <span className="display-3 error-icon text-primary mb-5">
+                <i
+                  className="fa-regular fa-exclamation"
+                  style={{ fontSize: "46px" }}
+                ></i>
+                {/* <svg
                   width="1em"
                   height="1em"
                   viewBox="0 0 16 16"
@@ -39,10 +43,10 @@ function Thankyou() {
                     fillRule="evenodd"
                     d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm7 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"
                   />
-                </svg>
+                </svg> */}
               </span>
-              <h2 className="display-3 text-black">Thank you!</h2>
-              <p className="lead mb-5">You order was successfuly completed.</p>
+              <h2 className="display-3 text-black">404</h2>
+              <p className="lead mb-5">Page Not Found!</p>
               <p>
                 <Link to="/shop" className="btn btn-sm btn-outline-black">
                   Back to shop
@@ -52,8 +56,8 @@ function Thankyou() {
           </div>
         </div>
       </div>
-    </body>
+    </>
   );
 }
 
-export default Thankyou;
+export default Error;
