@@ -1,9 +1,14 @@
-import { Link, useLocation } from "react-router-dom";
-import { cart, user } from "../assets/images";
+import { Link, useLocation } from 'react-router-dom';
+import { cart, user } from '../assets/images';
+import { setUserID } from '../features/user/UserSlice';
+import { useAppSelector, useAppDispatch } from '../hooks';
 
 function Header() {
+  const userDetail = useAppSelector((state) => state.user);
+  const dispatch = useAppDispatch();
+
+  console.log('userDetail', userDetail);
   const location = useLocation();
-  console.log(location.pathname);
   return (
     <nav
       className="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark"
@@ -29,42 +34,42 @@ function Header() {
         <div className="collapse navbar-collapse" id="navbarsFurni">
           <ul className="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
             <li
-              className={`nav-item ${location.pathname === "/home" && "active"}`}
+              className={`nav-item ${location.pathname === '/home' && 'active'}`}
             >
               <Link className="nav-link" to="home">
                 Home
               </Link>
             </li>
             <li
-              className={`nav-item ${location.pathname === "/shop" && "active"}`}
+              className={`nav-item ${location.pathname === '/shop' && 'active'}`}
             >
               <Link className="nav-link" to="shop">
                 Shop
               </Link>
             </li>
             <li
-              className={`nav-item ${location.pathname === "/about" && "active"}`}
+              className={`nav-item ${location.pathname === '/about' && 'active'}`}
             >
               <Link className="nav-link" to="about">
                 About us
               </Link>
             </li>
             <li
-              className={`nav-item ${location.pathname === "/services" && "active"}`}
+              className={`nav-item ${location.pathname === '/services' && 'active'}`}
             >
               <Link className="nav-link" to="services">
                 Services
               </Link>
             </li>
             <li
-              className={`nav-item ${location.pathname === "/blog" && "active"}`}
+              className={`nav-item ${location.pathname === '/blog' && 'active'}`}
             >
               <Link className="nav-link" to="blog">
                 Blog
               </Link>
             </li>
             <li
-              className={`nav-item ${location.pathname === "/contact" && "active"}`}
+              className={`nav-item ${location.pathname === '/contact' && 'active'}`}
             >
               <Link className="nav-link" to="contact">
                 Contact us
@@ -82,6 +87,11 @@ function Header() {
               <Link className="nav-link" to="cart">
                 <img src={cart} />
               </Link>
+            </li>
+            <li>
+              <button onClick={() => dispatch(setUserID('BH543JHB'))}>
+                {userDetail.accountID}
+              </button>
             </li>
           </ul>
         </div>
